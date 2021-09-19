@@ -13,10 +13,12 @@ router.get("/:uuid", async (req, res) =>{
  
     const response = await file.save();
     const filePath = `${__dirname}/../${file.path}`;
+        console.log(filePath);
     res.download(filePath);
     }
     catch(err){
         return res.render("download", {error: "Oops! something went wrong"});
+        console.log(err);
     }
 })
 
