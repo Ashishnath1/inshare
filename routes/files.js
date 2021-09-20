@@ -7,7 +7,7 @@ const file = require("../models/file");
 
 
 let storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, "../uploads"),    //null for error
+    destination: (req, file, cb) => cb(null, "uploads/"),    //null for error
     filename: (req, file, cb) => {
          const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}${path.extname(file.originalname)}`;
          //path.extname gives the extension of a file like .png
